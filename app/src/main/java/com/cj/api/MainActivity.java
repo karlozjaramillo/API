@@ -6,10 +6,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.cj.api.ApiManager.RetrofitClient;
-import com.cj.api.models.Civilization;
-import com.cj.api.models.Civilizations;
-
-import java.util.List;
+import com.cj.api.models.Characters;
 
 import es.dmoral.toasty.Toasty;
 import retrofit2.Call;
@@ -22,25 +19,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getCivilizations();
+        getCharacters();
     }
 
-    private void getCivilizations() {
-        Call<Civilizations> call = RetrofitClient.getInstance().getMyApi().getCivilizations();
-        call.enqueue(new Callback<Civilizations>() {
+    private void getCharacters() {
+        Call<Characters> call = RetrofitClient.getInstance().getMyApi().getCharacters();
+        call.enqueue(new Callback<Characters>() {
             @Override
-            public void onResponse(Call<Civilizations> call, Response<Civilizations> response) {
-                Civilizations myCivilizations = response.body();
+            public void onResponse(Call<Characters> call, Response<Characters> response) {
+                Characters myCharacters = response.body();
                 String message = "";
-                for (int i = 0; i < myCivilizations.getCivilizationList().size(); i++) {
-                    message = message + myCivilizations.getCivilizationList().get(i).getNameCivilization() + " - ";
+                for (int i = 0; i < myCharacters.getCharacterList().size(); i++) {
+                    message = message + myCharacters.getCharacterList().get(i).getnameCharacter() + " - ";
                 }
                 Toasty.success(getApplicationContext(), message, Toast.LENGTH_LONG, true).show();
 //                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onFailure(Call<Civilizations> call, Throwable t) {
+            public void onFailure(Call<Characters> call, Throwable t) {
                 Toasty.error(getApplicationContext(), "Ocurrió un error", Toast.LENGTH_SHORT, true).show();
 //                Toast.makeText(getApplicationContext(), "Ocurrió un error", Toast.LENGTH_SHORT).show();
             }
