@@ -9,19 +9,19 @@ public class Character {
     @SerializedName("name")
     private String nameCharacter;
 
-    public String getidCharacter() {
+    public String getIdCharacter() {
         return idCharacter;
     }
 
-    public void setidCharacter(String idCharacter) {
+    public void setIdCharacter(String idCharacter) {
         this.idCharacter = idCharacter;
     }
 
-    public String getnameCharacter() {
+    public String getNameCharacter() {
         return nameCharacter;
     }
 
-    public void setnameCharacter(String nameCharacter) {
+    public void setNameCharacter(String nameCharacter) {
         this.nameCharacter = nameCharacter;
     }
 

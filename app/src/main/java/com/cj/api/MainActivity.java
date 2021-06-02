@@ -2,7 +2,11 @@ package com.cj.api;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.cj.api.ApiManager.RetrofitClient;
@@ -13,26 +17,36 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+
+    ListView listCharacters;
+    Characters myCharacters;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getCharacters();
+        listCharacters = findViewById(R.id.lvCharacters);
+        getCharactersFromApi();
+        listCharacters.setOnItemClickListener(this);
+
     }
 
-    private void getCharacters() {
+    private void getCharactersFromApi() {
         Call<Characters> call = RetrofitClient.getInstance().getMyApi().getCharacters();
         call.enqueue(new Callback<Characters>() {
             @Override
             public void onResponse(Call<Characters> call, Response<Characters> response) {
-                Characters myCharacters = response.body();
+                myCharacters = response.body();
                 String message = "";
-                for (int i = 0; i < myCharacters.getCharacterList().size(); i++) {
-                    message = message + myCharacters.getCharacterList().get(i).getnameCharacter() + " - ";
-                }
-                Toasty.success(getApplicationContext(), message, Toast.LENGTH_LONG, true).show();
+
+                CharacterAdapter adapter = new CharacterAdapter(MainActivity.this, myCharacters.getCharacterList());
+                listCharacters.setAdapter(adapter);
+
+//                for (int i = 0; i < myCharacters.getCharacterList().size(); i++) {
+//                    message = message + myCharacters.getCharacterList().get(i).getNameCharacter() + " - ";
+//                }
+//                Toasty.success(getApplicationContext(), message, Toast.LENGTH_LONG, true).show();
 //                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
             }
 
@@ -42,5 +56,12 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(getApplicationContext(), "Ocurrió un error", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(this, CharacterDetail.class);
+        intent.putExtra("id", myCharacters.getCharacterList().get(position).getIdCharacter());
+        startActivity(intent);
     }
 }
