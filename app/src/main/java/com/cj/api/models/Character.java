@@ -9,6 +9,17 @@ public class Character {
     @SerializedName("name")
     private String nameCharacter;
 
+    @SerializedName("image")
+    private String imageCharacter;
+
+    public String getImageCharacter() {
+        return imageCharacter;
+    }
+
+    public void setImageCharacter(String imageCharacter) {
+        this.imageCharacter = imageCharacter;
+    }
+
     public String getIdCharacter() {
         return idCharacter;
     }
@@ -25,8 +36,9 @@ public class Character {
         this.nameCharacter = nameCharacter;
     }
 
-    public Character(String idCharacter, String nameCharacter) {
+    public Character(String idCharacter, String nameCharacter, String imageCharacter) {
         this.idCharacter = idCharacter;
         this.nameCharacter = nameCharacter;
+        this.imageCharacter = imageCharacter;
     }
 }

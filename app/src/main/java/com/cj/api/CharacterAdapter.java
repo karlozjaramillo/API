@@ -6,9 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cj.api.models.Character;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,8 +50,15 @@ public class CharacterAdapter extends BaseAdapter {
         Character character = myCharacters.get(position);
         TextView nameCharacter = view.findViewById(R.id.tvName);
         nameCharacter.setText(character.getNameCharacter());
-        TextView idCharacter = view.findViewById(R.id.tvId);
-        idCharacter.setText(character.getIdCharacter());
+        ImageView imageCharacter = view.findViewById(R.id.ivImage);
+
+        Picasso.get()
+                .load(character.getImageCharacter())
+                .resize(100,100)
+                .centerCrop()
+                .error(R.mipmap.ic_launcher)
+                .into(imageCharacter);
+
         return view;
     }
 }
