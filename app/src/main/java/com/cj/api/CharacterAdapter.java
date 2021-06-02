@@ -43,18 +43,24 @@ public class CharacterAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = convertView;
-        if (convertView == null){
+        if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.character_item, null);
         }
         Character character = myCharacters.get(position);
         TextView nameCharacter = view.findViewById(R.id.tvName);
+        TextView statusCharacter = view.findViewById(R.id.tvStatus);
+        TextView speciesCharacter = view.findViewById(R.id.tvSpecies);
+        TextView genderCharacter = view.findViewById(R.id.tvGender);
         nameCharacter.setText(character.getNameCharacter());
+        statusCharacter.setText("Status: " + character.getStatusCharacter());
+        speciesCharacter.setText("Species: " + character.getSpeciesCharacter());
+        genderCharacter.setText("Gender: " + character.getGenderCharacter());
         ImageView imageCharacter = view.findViewById(R.id.ivImage);
 
         Picasso.get()
                 .load(character.getImageCharacter())
-                .resize(100,100)
+                .resize(100, 100)
                 .centerCrop()
                 .error(R.mipmap.ic_launcher)
                 .into(imageCharacter);
