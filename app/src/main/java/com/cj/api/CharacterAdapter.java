@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.text.Html;
 
 import com.cj.api.models.Character;
 import com.squareup.picasso.Picasso;
@@ -53,7 +54,7 @@ public class CharacterAdapter extends BaseAdapter {
         TextView speciesCharacter = view.findViewById(R.id.tvSpecies);
         TextView genderCharacter = view.findViewById(R.id.tvGender);
         nameCharacter.setText(character.getNameCharacter());
-        statusCharacter.setText("Status: " + character.getStatusCharacter());
+        statusCharacter.setText(Html.fromHtml("<strong style='font-weight: bold;'>Status: </strong>") + character.getStatusCharacter());
         speciesCharacter.setText("Species: " + character.getSpeciesCharacter());
         genderCharacter.setText("Gender: " + character.getGenderCharacter());
         ImageView imageCharacter = view.findViewById(R.id.ivImage);
