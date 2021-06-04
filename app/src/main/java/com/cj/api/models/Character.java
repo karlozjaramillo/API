@@ -15,6 +15,33 @@ public class Character {
     @SerializedName("status")
     private String statusCharacter;
 
+    @SerializedName("species")
+    private String speciesCharacter;
+
+    @SerializedName("gender")
+    private String genderCharacter;
+
+    @SerializedName("created")
+    private String createdCharacter;
+
+    public Character(String idCharacter, String nameCharacter, String imageCharacter, String statusCharacter, String createdCharacter, String speciesCharacter, String genderCharacter) {
+        this.idCharacter = idCharacter;
+        this.nameCharacter = nameCharacter;
+        this.imageCharacter = imageCharacter;
+        this.statusCharacter = statusCharacter;
+        this.createdCharacter = createdCharacter;
+        this.speciesCharacter = speciesCharacter;
+        this.genderCharacter = genderCharacter;
+    }
+
+    public String getCreatedCharacter() {
+        return createdCharacter;
+    }
+
+    public void setCreatedCharacter(String createdCharacter) {
+        this.createdCharacter = createdCharacter;
+    }
+
     public String getStatusCharacter() {
         return statusCharacter;
     }
@@ -38,12 +65,6 @@ public class Character {
     public void setGenderCharacter(String genderCharacter) {
         this.genderCharacter = genderCharacter;
     }
-
-    @SerializedName("species")
-    private String speciesCharacter;
-
-    @SerializedName("gender")
-    private String genderCharacter;
 
     public String getImageCharacter() {
         return imageCharacter;
@@ -69,12 +90,5 @@ public class Character {
         this.nameCharacter = nameCharacter;
     }
 
-    public Character(String idCharacter, String nameCharacter, String imageCharacter, String statusCharacter, String speciesCharacter, String genderCharacter) {
-        this.idCharacter = idCharacter;
-        this.nameCharacter = nameCharacter;
-        this.imageCharacter = imageCharacter;
-        this.statusCharacter = statusCharacter;
-        this.speciesCharacter = speciesCharacter;
-        this.genderCharacter = genderCharacter;
-    }
+
 }
