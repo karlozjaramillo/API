@@ -24,7 +24,9 @@ public class Character {
     @SerializedName("created")
     private String createdCharacter;
 
-    public Character(String idCharacter, String nameCharacter, String imageCharacter, String statusCharacter, String createdCharacter, String speciesCharacter, String genderCharacter) {
+    public Character(String idCharacter, String nameCharacter, String imageCharacter,
+                     String statusCharacter, String createdCharacter, String speciesCharacter,
+                     String genderCharacter) {
         this.idCharacter = idCharacter;
         this.nameCharacter = nameCharacter;
         this.imageCharacter = imageCharacter;

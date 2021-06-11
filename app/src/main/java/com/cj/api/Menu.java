@@ -23,15 +23,23 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
         btnLocations = findViewById(R.id.btnLocations);
 
         btnCharacter.setOnClickListener(this);
+        btnEpisodes.setOnClickListener(this);
+        btnLocations.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnCharacter:
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
+                Intent intentCharacter = new Intent(this, MainActivity.class);
+                startActivity(intentCharacter);
                 break;
+            case R.id.btnEpisodes:
+                Intent intentEpisode = new Intent(this, EpisodesActivity.class);
+                startActivity(intentEpisode);
+                break;
+            case R.id.btnLocations:
+
         }
     }
 }

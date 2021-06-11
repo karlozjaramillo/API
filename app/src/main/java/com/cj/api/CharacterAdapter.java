@@ -13,7 +13,6 @@ import android.text.Html;
 import com.cj.api.models.Character;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CharacterAdapter extends BaseAdapter {
@@ -49,7 +48,7 @@ public class CharacterAdapter extends BaseAdapter {
             view = inflater.inflate(R.layout.character_item, null);
         }
         Character character = myCharacters.get(position);
-        TextView nameCharacter = view.findViewById(R.id.tvName);
+        TextView nameCharacter = view.findViewById(R.id.tvNameCharacter);
         TextView statusCharacter = view.findViewById(R.id.tvStatus);
         TextView speciesCharacter = view.findViewById(R.id.tvSpecies);
         TextView genderCharacter = view.findViewById(R.id.tvGender);
@@ -57,7 +56,7 @@ public class CharacterAdapter extends BaseAdapter {
         statusCharacter.setText(Html.fromHtml("<strong style='font-weight: bold;'>Status: </strong>") + character.getStatusCharacter());
         speciesCharacter.setText("Species: " + character.getSpeciesCharacter());
         genderCharacter.setText("Gender: " + character.getGenderCharacter());
-        ImageView imageCharacter = view.findViewById(R.id.ivImage);
+        ImageView imageCharacter = view.findViewById(R.id.ivImageCharacter);
 
         Picasso.get()
                 .load(character.getImageCharacter())

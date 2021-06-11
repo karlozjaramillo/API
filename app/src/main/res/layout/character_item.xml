@@ -7,7 +7,7 @@
     android:background="#E1ECF3">
 
     <TextView
-        android:id="@+id/tvName"
+        android:id="@+id/tvNameCharacter"
         android:layout_width="220dp"
         android:layout_height="45dp"
         android:layout_marginStart="10dp"
@@ -20,16 +20,16 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ivImage"
+        app:layout_constraintStart_toEndOf="@+id/ivImageCharacter"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/ivImage"
+        android:id="@+id/ivImageCharacter"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/tvName"
+        app:layout_constraintEnd_toStartOf="@+id/tvNameCharacter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_launcher" />
@@ -45,8 +45,8 @@
         android:text="Status"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ivImage"
-        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+        app:layout_constraintStart_toEndOf="@+id/ivImageCharacter"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameCharacter" />
 
     <TextView
         android:id="@+id/tvSpecies"
@@ -59,7 +59,7 @@
         android:text="Species"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ivImage"
+        app:layout_constraintStart_toEndOf="@+id/ivImageCharacter"
         app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
 
     <TextView
@@ -73,7 +73,7 @@
         android:text="Gender"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ivImage"
+        app:layout_constraintStart_toEndOf="@+id/ivImageCharacter"
         app:layout_constraintTop_toBottomOf="@+id/tvSpecies" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

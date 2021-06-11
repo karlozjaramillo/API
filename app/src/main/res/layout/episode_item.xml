@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E1ECF3">
+
+    <TextView
+        android:id="@+id/tvCreated"
+        android:layout_width="220dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="40dp"
+        android:paddingLeft="10dp"
+        android:text="Created"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivImageEpisode"
+        app:layout_constraintTop_toBottomOf="@+id/tvEpisode" />
+
+    <TextView
+        android:id="@+id/tvEpisode"
+        android:layout_width="220dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="40dp"
+        android:paddingLeft="10dp"
+        android:text="Episode"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivImageEpisode"
+        app:layout_constraintTop_toBottomOf="@+id/tvAirDate" />
+
+    <TextView
+        android:id="@+id/tvAirDate"
+        android:layout_width="220dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="40dp"
+        android:paddingLeft="10dp"
+        android:text="Air Date"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivImageEpisode"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameEpisode" />
+
+    <TextView
+        android:id="@+id/tvNameEpisode"
+        android:layout_width="220dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:background="#00b0c8"
+        android:gravity="center|left"
+        android:paddingLeft="10dp"
+        android:text="Name"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivImageEpisode"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivImageEpisode"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvCreated"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/episodes" />
+</androidx.constraintlayout.widget.ConstraintLayout>
