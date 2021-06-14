@@ -4,6 +4,8 @@ import com.cj.api.models.Character;
 import com.cj.api.models.Characters;
 import com.cj.api.models.Episode;
 import com.cj.api.models.Episodes;
+import com.cj.api.models.Location;
+import com.cj.api.models.Locations;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -24,4 +26,10 @@ public interface Api {
 
     @GET("episode/{id}")
     Call<Episode> getEpisode(@Path("id") String id);
+
+    @GET("location")
+    Call<Locations> getLocations();
+
+    @GET("location/{id}")
+    Call<Location> getLocation(@Path("id") String id);
 }

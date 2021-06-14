@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.API">
-        <activity android:name=".EpisodeDetail"></activity>
+        <activity android:name=".LocationDetail"></activity>
+        <activity android:name=".LocationActivity" />
+        <activity android:name=".EpisodeDetail" />
         <activity android:name=".EpisodesActivity" />
         <activity android:name=".Menu">
             <intent-filter>

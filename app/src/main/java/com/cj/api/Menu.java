@@ -39,7 +39,9 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
                 startActivity(intentEpisode);
                 break;
             case R.id.btnLocations:
-
+                Intent intentLocation = new Intent(this, LocationActivity.class);
+                startActivity(intentLocation);
+                break;
         }
     }
 }

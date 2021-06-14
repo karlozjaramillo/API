@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E1ECF3"
-    tools:context=".EpisodesActivity">
+    tools:context=".LocationActivity">
 
     <ListView
-        android:id="@+id/lvEpisodes"
+        android:id="@+id/lvLocations"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp"
