@@ -2,6 +2,7 @@ package com.cj.api.ApiManager;
 
 import com.cj.api.models.Character;
 import com.cj.api.models.Characters;
+import com.cj.api.models.Episode;
 import com.cj.api.models.Episodes;
 
 import retrofit2.Call;
@@ -20,4 +21,7 @@ public interface Api {
 
     @GET("episode")
     Call<Episodes> getEpisodes();
+
+    @GET("episode/{id}")
+    Call<Episode> getEpisode(@Path("id") String id);
 }

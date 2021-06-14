@@ -2,7 +2,10 @@ package com.cj.api;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -14,7 +17,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class EpisodesActivity extends AppCompatActivity {
+public class EpisodesActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     ListView lvEpisodes;
     Episodes episodes;
@@ -26,6 +29,7 @@ public class EpisodesActivity extends AppCompatActivity {
 
         lvEpisodes = findViewById(R.id.lvEpisodes);
         getEpisodesFromApi();
+        lvEpisodes.setOnItemClickListener(this);
     }
 
     private void getEpisodesFromApi(){
@@ -44,5 +48,12 @@ public class EpisodesActivity extends AppCompatActivity {
                 Toasty.error(getApplicationContext(), "Ocurrió un error", Toast.LENGTH_SHORT, true).show();
             }
         });
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(this, EpisodeDetail.class);
+        intent.putExtra("id", episodes.getEpisodeList().get(position).getIdEpisode());
+        startActivity(intent);
     }
 }
