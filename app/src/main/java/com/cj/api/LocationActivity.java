@@ -2,7 +2,10 @@ package com.cj.api;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.cj.api.ApiManager.RetrofitClient;
@@ -12,7 +15,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LocationActivity extends AppCompatActivity {
+public class LocationActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     ListView lvLocations;
     Locations locations;
@@ -24,6 +27,7 @@ public class LocationActivity extends AppCompatActivity {
 
         lvLocations = findViewById(R.id.lvLocations);
         getLocationsFromApi();
+        lvLocations.setOnItemClickListener(this);
     }
 
     private void getLocationsFromApi(){
@@ -42,5 +46,12 @@ public class LocationActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(this, LocationDetail.class);
+        intent.putExtra("id", locations.getLocationList().get(position).getIdLocation());
+        startActivity(intent);
     }
 }

@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cj.api.ApiManager.RetrofitClient;
 import com.cj.api.models.Episode;
 
+import es.dmoral.toasty.Toasty;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -49,7 +51,7 @@ public class EpisodeDetail extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Episode> call, Throwable t) {
-
+                Toasty.error(getApplicationContext(), "Ocurrió un error", Toast.LENGTH_SHORT, true).show();
             }
         });
     }
