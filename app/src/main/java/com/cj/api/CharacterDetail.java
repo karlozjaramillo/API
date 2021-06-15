@@ -60,10 +60,10 @@ public class CharacterDetail extends AppCompatActivity {
                         .error(R.mipmap.ic_launcher)
                         .into(imgCharacterDetail);
                 txtNameCharacterDetail.setText(myCharacter.getNameCharacter());
-                txtStatusCharacterDetail.setText("Status: " + myCharacter.getStatusCharacter());
-                txtSpeciesCharacterDetail.setText("Species: " + myCharacter.getSpeciesCharacter());
-                txtGenderCharacterDetail.setText("Gender: " + myCharacter.getGenderCharacter());
-                txtCreatedCharacterDetail.setText("Created: " + myCharacter.getCreatedCharacter());
+                txtStatusCharacterDetail.setText(myCharacter.getStatusCharacter());
+                txtSpeciesCharacterDetail.setText(myCharacter.getSpeciesCharacter());
+                txtGenderCharacterDetail.setText(myCharacter.getGenderCharacter());
+                txtCreatedCharacterDetail.setText(myCharacter.getCreatedCharacter());
 //                Toasty.success(getApplicationContext(), myCharacter.getNameCharacter(), Toast.LENGTH_SHORT, true).show();
             }
 

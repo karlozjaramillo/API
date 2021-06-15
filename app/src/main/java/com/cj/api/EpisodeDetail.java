@@ -44,9 +44,9 @@ public class EpisodeDetail extends AppCompatActivity {
             public void onResponse(Call<Episode> call, Response<Episode> response) {
                 Episode myEpisode = response.body();
                 txtNameEpisodeDetail.setText(myEpisode.getNameEpisode());
-                txtAirDateEpisodeDetail.setText("Air Date: " + myEpisode.getAirDateEpisode());
-                txtEpisodeCodeEpisodeDetail.setText("Code: " + myEpisode.getEpisodeEpisode());
-                txtEpisodeCreatedDetail.setText("Created: " + myEpisode.getCreatedEpisode());
+                txtAirDateEpisodeDetail.setText(myEpisode.getAirDateEpisode());
+                txtEpisodeCodeEpisodeDetail.setText(myEpisode.getEpisodeEpisode());
+                txtEpisodeCreatedDetail.setText(myEpisode.getCreatedEpisode());
             }
 
             @Override

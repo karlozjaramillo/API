@@ -45,9 +45,9 @@ public class LocationDetail extends AppCompatActivity {
             public void onResponse(Call<Location> call, Response<Location> response) {
                 Location myLocation = response.body();
                 txtNameLocationDetail.setText(myLocation.getNameLocation());
-                txtTypeLocationDetail.setText("Type: " + myLocation.getTypeLocation());
-                txtDimensionLocationDetail.setText("Dimension: " + myLocation.getDimensionLocation());
-                txtCreatedLocationDetail.setText("Created: " + myLocation.getCreatedLocation());
+                txtTypeLocationDetail.setText(myLocation.getTypeLocation());
+                txtDimensionLocationDetail.setText(myLocation.getDimensionLocation());
+                txtCreatedLocationDetail.setText(myLocation.getCreatedLocation());
             }
 
             @Override

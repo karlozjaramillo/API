@@ -74,5 +74,5 @@
         app:layout_constraintEnd_toStartOf="@+id/tvCreated"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/episodes" />
+        app:srcCompat="@drawable/episode" />
 </androidx.constraintlayout.widget.ConstraintLayout>
