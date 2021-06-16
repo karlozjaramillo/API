@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         listCharacters = findViewById(R.id.lvCharacters);
         getCharactersFromApi();
         listCharacters.setOnItemClickListener(this);
-
     }
 
     private void getCharactersFromApi() {
@@ -42,18 +41,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
                 CharacterAdapter adapter = new CharacterAdapter(MainActivity.this, myCharacters.getCharacterList());
                 listCharacters.setAdapter(adapter);
-
-//                for (int i = 0; i < myCharacters.getCharacterList().size(); i++) {
-//                    message = message + myCharacters.getCharacterList().get(i).getNameCharacter() + " - ";
-//                }
-//                Toasty.success(getApplicationContext(), message, Toast.LENGTH_LONG, true).show();
-//                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFailure(Call<Characters> call, Throwable t) {
                 Toasty.error(getApplicationContext(), "Ocurrió un error", Toast.LENGTH_SHORT, true).show();
-//                Toast.makeText(getApplicationContext(), "Ocurrió un error", Toast.LENGTH_SHORT).show();
             }
         });
     }

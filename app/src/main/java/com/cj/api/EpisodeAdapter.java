@@ -53,6 +53,7 @@ public class EpisodeAdapter extends BaseAdapter {
         airDateEpisode.setText(episode.getAirDateEpisode());
         episodeEpisode.setText(episode.getEpisodeEpisode());
         createdEpisode.setText(episode.getCreatedEpisode());
+
         return view;
     }
 }

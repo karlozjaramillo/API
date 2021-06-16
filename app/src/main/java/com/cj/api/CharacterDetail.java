@@ -42,8 +42,6 @@ public class CharacterDetail extends AppCompatActivity {
         txtGenderCharacterDetail = findViewById(R.id.txtGenderCharacterDetail);
         txtCreatedCharacterDetail = findViewById(R.id.txtCreatedCharacterDetail);
 
-//        Toasty.success(this, id, Toasty.LENGTH_LONG).show();
-
         getCharacterById(id);
     }
 
@@ -64,7 +62,6 @@ public class CharacterDetail extends AppCompatActivity {
                 txtSpeciesCharacterDetail.setText(myCharacter.getSpeciesCharacter());
                 txtGenderCharacterDetail.setText(myCharacter.getGenderCharacter());
                 txtCreatedCharacterDetail.setText(myCharacter.getCreatedCharacter());
-//                Toasty.success(getApplicationContext(), myCharacter.getNameCharacter(), Toast.LENGTH_SHORT, true).show();
             }
 
             @Override
